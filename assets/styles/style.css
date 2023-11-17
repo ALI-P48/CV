@@ -3043,7 +3043,7 @@ button:focus {
 }
 
 .review-item {
-  cursor: pointer;
+  /*cursor: pointer;*/
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3063,7 +3063,7 @@ button:focus {
 }
 
 .review-item::before {
-  background: var(--color-gradient-soft) url(../icons/icon-quote.svg);
+  background: var(--color-gradient-soft) url(../icons/icon-learn.png);
   background-repeat: no-repeat;
   background-position: 0 0, right 1.875rem top 1.5rem;
 }
