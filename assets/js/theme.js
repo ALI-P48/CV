@@ -69,7 +69,7 @@ function openEn() {
   currentPathname = currentPathname.replace("/index.html", "");
   currentPathname = currentPathname.replace("/en", "");
   currentPathname = currentPathname.replace("/fa", "");
-  window.open(currentPathname + '/en', "_self");
+  window.open(window.location.host + '/en', "_self");
 }
 
 function openFa() {
@@ -79,5 +79,5 @@ function openFa() {
   currentPathname = currentPathname.replace("/index.html", "");
   currentPathname = currentPathname.replace("/en", "");
   currentPathname = currentPathname.replace("/fa", "");
-  window.open(currentPathname + '/fa', "_self");
+  window.open(window.location.host + '/fa', "_self");
 }
