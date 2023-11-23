@@ -3365,4 +3365,38 @@ button:focus {
   border-radius: 0.0625rem;
   height: 100%;
 }
+
+.btn-deactive {
+  color: var(--color-paragraph);
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+.btn-active {
+  color: var(--color-heading);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.nobtn {
+  background:none;
+  border:none;
+  padding: 0;
+}
+
+.theme-btns {
+  /*text-align: left;*/
+  order: 2;
+}
+
+.lang-btns {
+  /*text-align: right;*/
+  order: 1;
+}
+
+.btns-row {
+  display: flex;
+  justify-content: space-between;
+}
+
 /*# sourceMappingURL=style.css.map */
