@@ -90,6 +90,30 @@
 								<a class="social__link" href="https://t.me/ALI_P48"><i class="feathericon-send"></i></a>
 						    </div>
 						</div>	
+						<br>
+						<div class="btns-row">
+							<div class="theme-btns">
+								<button type="button" id="theme-light-btn" class="nobtn btn-deactive" onclick="set_light()">
+									<i class="feathericon-sun"></i>
+									Light
+								</button>
+								<span class="btn-deactive">|</span>
+								<button type="button" id="theme-dark-btn" class="nobtn btn-active" onclick="set_dark()">
+									<i class="feathericon-moon"></i>
+									Dark
+								</button>
+							</div>
+							<div class="lang-btns">
+								<i class="feathericon-globe"></i>
+								<button type="button" id="lang-en-btn" class="nobtn btn-deactive" onclick="openEn()">
+									EN
+								</button>
+								<span class="btn-deactive">|</span>
+								<button type="button" id="lang-fa-btn" class="nobtn btn-active" onclick="openFa()">
+									FA
+								</button>
+							</div>
+						</div>
 					</div>	
 		        </aside>
 		        
@@ -712,6 +736,7 @@
 	<script src="../assets/js/jquery-3.4.1.min.js"></script>
 	<script src="../assets/js/plugins.min.js"></script>
     <script src="../assets/js/common.js"></script>
+	<script src="../assets/js/theme.js"></script>
 
 </body>
 </html>

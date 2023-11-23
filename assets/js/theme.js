@@ -63,11 +63,21 @@ function set_light() {
 }
 
 function openEn() {
-  var baseUrl = window.location.origin;
-  window.open(baseUrl + '/en', "_blank");
+  var currentURL = window.location.href;
+  var currentHost = window.location.host;
+  var currentPathname = window.location.pathname;
+  currentPathname = currentPathname.replace("/index.html", "");
+  currentPathname = currentPathname.replace("/en", "");
+  currentPathname = currentPathname.replace("/fa", "");
+  window.open(currentPathname + '/en', "_self");
 }
 
 function openFa() {
-  var baseUrl = window.location.origin;
-  window.open(baseUrl + '/fa', "_blank");
+  var currentURL = window.location.href;
+  var currentHost = window.location.host;
+  var currentPathname = window.location.pathname;
+  currentPathname = currentPathname.replace("/index.html", "");
+  currentPathname = currentPathname.replace("/en", "");
+  currentPathname = currentPathname.replace("/fa", "");
+  window.open(currentPathname + '/fa', "_self");
 }
