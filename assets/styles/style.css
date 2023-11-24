@@ -1134,10 +1134,7 @@ button:focus {
 }
 
 .icon-box .font-icon {
-  background: var(--color-gradient-text);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--color-accent);
 }
 
 @media only screen and (max-width: 580px) {
@@ -3297,10 +3294,7 @@ button:focus {
 }
 
 .timeline__period {
-  background: var(--color-gradient-text);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--color-accent);
   font-weight: 400;
 }
 

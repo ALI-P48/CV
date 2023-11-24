@@ -6,7 +6,10 @@ var darkElements = document.querySelectorAll('.element-dark');
 var lightElements = document.querySelectorAll('.element-light');
 var hidepdfs = document.querySelectorAll('.hide-pdf');
 
+var themme = "dark";
+
 function set_dark() {
+  themme = "dark";
   r.style.setProperty('--color-heading', '#FCFCFC');
   r.style.setProperty('--color-paragraph', '#D6D6D6');
   r.style.setProperty('--color-border', '#383838');
@@ -44,6 +47,7 @@ function set_dark() {
 }
 
 function set_light() {
+  themme = "light";
   r.style.setProperty('--color-heading', '#030303');
   r.style.setProperty('--color-paragraph', '#000000');
   r.style.setProperty('--color-border', '#c1d5fb');
@@ -105,31 +109,84 @@ function toPDF() {
     elmnt.classList.remove('visible');
     elmnt.classList.add('invisible');
   });
+  
   r.style.setProperty('--box-shadow-24', '0px 0px 0px rgb(255 255 255 / 0%)');
   r.style.setProperty('--box-shadow-30', '0px 0px 0px rgb(255 255 255 / 0%)');
   r.style.setProperty('--box-shadow-40', '0px 0px 0px rgb(255 255 255 / 0%)');
   r.style.setProperty('--box-shadow-50', '0px 0px 0px rgb(255 255 255 / 0%)');
   r.style.setProperty('--box-shadow-80', '0px 0px 0px rgb(255 255 255 / 0%)');
 
-  const pdfOptions = {
-    margin: 10,
-    filename: 'webpage.pdf',
-    image: { type: 'jpeg', quality: 0.98 },
-    html2canvas: { scale: 2 },
-    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-  };
+  if(themme=="dark") {
+    r.style.setProperty('--color-heading', '#FCFCFC');
+    r.style.setProperty('--color-paragraph', '#D6D6D6');
+    r.style.setProperty('--color-border', '#383838');
+    r.style.setProperty('--color-bg', '#121212');
+    r.style.setProperty('--color-surface-1', '#1e1e1f');
+    r.style.setProperty('--color-surface-2', '#2a2a2b');
+    r.style.setProperty('--color-surface-3', '#202021');
+    r.style.setProperty('--color-accent', '#FFDB6E');
+    r.style.setProperty('--color-error', '#B84C4C');
+    r.style.setProperty('--color-gradient', '#d5b656');
+    r.style.setProperty('--color-gradient-soft', '#2a2a2b');
+    r.style.setProperty('--color-gradient-text', '#FFDB6E');
+    r.style.setProperty('--color-gradient-border', '#af9a5b');
+    r.style.setProperty('--color-gradient-border-gray', '#FFDB6E');
+    r.style.setProperty('--color-gradient-gray', '#2a2a2b');
+    r.style.setProperty('--color-gradient-icon', '#2a2a2b');
+    r.style.setProperty('--color-btn', '#2a2a2b');
+    r.style.setProperty('--box-shadow-24', '#121212');
+    r.style.setProperty('--box-shadow-30', '#121212');
+    r.style.setProperty('--box-shadow-40', '#121212');
+    r.style.setProperty('--box-shadow-50', '#121212');
+    r.style.setProperty('--box-shadow-80', '#121212');
+  }
+  if(themme=="light") {
+    r.style.setProperty('--color-heading', '#030303');
+    r.style.setProperty('--color-paragraph', '#000000');
+    r.style.setProperty('--color-border', '#c1d5fb');
+    r.style.setProperty('--color-bg', '#445473');
+    r.style.setProperty('--color-surface-1', '#e1e1e1');
+    r.style.setProperty('--color-surface-2', '#bfd0ef');
+    r.style.setProperty('--color-surface-3', '#e1e1e1');
+    r.style.setProperty('--color-accent', '#0057ff');
+    r.style.setProperty('--color-error', '#47b3b3');
+    r.style.setProperty('--color-gradient', '#8e9ebd');
+    r.style.setProperty('--color-gradient-soft', '#cfdbf1');
+    r.style.setProperty('--color-gradient-text', '#445473');
+    r.style.setProperty('--color-gradient-border', '#445473');
+    r.style.setProperty('--color-gradient-border-gray', '#445473');
+    r.style.setProperty('--color-gradient-gray', '#bfd0ef');
+    r.style.setProperty('--color-gradient-icon', '#bfd0ef');
+    r.style.setProperty('--color-btn', '#bfd0ef');
+    r.style.setProperty('--box-shadow-24', '#e1e1e1');
+    r.style.setProperty('--box-shadow-30', '#e1e1e1');
+    r.style.setProperty('--box-shadow-40', '#e1e1e1');
+    r.style.setProperty('--box-shadow-50', '#e1e1e1');
+    r.style.setProperty('--box-shadow-80', '#e1e1e1');
+  }
+}
 
-  // Get the content element
-  const content = document.getElementById('content');
-
-  // Use html2pdf.js to generate PDF
-  html2pdf().set(pdfOptions).from(content).save("gg.pdf");
-  //html2pdf(document, pdfOptions);
+function hidePanel() {
+  var panel = document.getElementById("panel");
+  var content = document.getElementById("content");
+  panel.classList.remove('visible');
+  panel.classList.add('invisible');
+  content.classList.remove('col-xl-9');
+  content.classList.add('col-xl-12');
 }
 
 function handleKeyPress(event) {
-  if (event.key === 'p' || event.key === 'P') {
+  if (event.ctrlKey && event.key === ".") {
     toPDF();
+  }
+  if (event.ctrlKey && event.key === ",") {
+    hidePanel();
+  }
+  if (event.ctrlKey && event.key === "l") {
+    set_light();
+  }
+  if (event.ctrlKey && event.key === "k") {
+    set_dark();
   }
 }
 
