@@ -3068,6 +3068,18 @@ button:focus {
   background-position: 0 0, right 1.875rem top 1.5rem;
 }
 
+.review-item-bg-dark::before {
+  background: var(--color-gradient-soft) url(../icons/icon-learn.png);
+  background-repeat: no-repeat;
+  background-position: 0 0, right 1.875rem top 1.5rem;
+}
+
+.review-item-bg-light::before {
+  background: var(--color-gradient-soft) url(../icons/icon-learn-light.png);
+  background-repeat: no-repeat;
+  background-position: 0 0, right 1.875rem top 1.5rem;
+}
+
 @media only screen and (max-width: 580px) {
   .review-item {
     padding: 1rem;
@@ -3399,4 +3411,12 @@ button:focus {
   justify-content: space-between;
 }
 
+.invisible {
+  display: none;
+}
+
+
+.visible {
+  display: block;
+}
 /*# sourceMappingURL=style.css.map */
